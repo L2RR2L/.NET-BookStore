@@ -9,12 +9,36 @@
       "PackagePath": "staticwebassets\\css\\Theme.css"
     },
     {
+      "Id": "C:\\Users\\ASUS\\Desktop\\Projet\\wwwroot\\css\\custom.css",
+      "PackagePath": "staticwebassets\\css\\custom.css"
+    },
+    {
       "Id": "C:\\Users\\ASUS\\Desktop\\Projet\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\ASUS\\Desktop\\Projet\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\Desktop\\Projet\\wwwroot\\images\\1984.jpg",
+      "PackagePath": "staticwebassets\\images\\1984.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\Desktop\\Projet\\wwwroot\\images\\becoming.jpg",
+      "PackagePath": "staticwebassets\\images\\becoming.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\Desktop\\Projet\\wwwroot\\images\\thegreatgatsby.jpg",
+      "PackagePath": "staticwebassets\\images\\thegreatgatsby.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\Desktop\\Projet\\wwwroot\\images\\thehungergames.jpg",
+      "PackagePath": "staticwebassets\\images\\thehungergames.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\Desktop\\Projet\\wwwroot\\images\\tokillamockingbird.jpg",
+      "PackagePath": "staticwebassets\\images\\tokillamockingbird.jpg"
     },
     {
       "Id": "C:\\Users\\ASUS\\Desktop\\Projet\\wwwroot\\js\\site.js",

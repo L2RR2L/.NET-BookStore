@@ -1,0 +1,79 @@
+﻿@model Projet.Models.Cart
+
+<h1>Cart</h1>
+
+@if (Model.CartItems.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Book</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach(var item in Model.CartItems)
+            {
+                var total = item.Book.Price * item.Quantity;
+
+                <tr>
+                    <td>
+                        <a class="item" asp-controller="Store" asp-action="Details" asp-route-id="@item.Id"> <img src="~/images/@Url.Content(item.Book.ImageUrl)" style="height: 4em" /> </a>
+                    </td>
+
+                    <td>
+                        <a class="item" asp-controller="Store" asp-action="Details" asp-route-id="@item.Id"> @item.Book.Title </a>
+                    </td>
+
+                    <td>
+                        @total.ToString("c")
+                    </td>
+
+                    <td>
+                        <a asp-controller="Cart" asp-action="ReduceQuantity" asp-route-id="@item.Book.Id"><i class="bi bi-dash"></i></a>
+                        <span class="badge badge-primary">@item.Quantity</span>
+                        <a asp-controller="Cart" asp-action="IncreaseQuantity" asp-route-id="@item.Book.Id"><i class="bi bi-plus"></i></a>
+                    </td>
+                    <td>
+                        <a asp-controller="Cart" asp-action="RemoveFromCart" asp-route-id="@item.Book.Id" class="text-danger">
+                            <i class="bi bi-bookmark-x"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td class="text-right" colspan="3">
+                    <strong>Total: </strong>
+                </td>
+
+                <td>
+                    <strong>@Model?.GetCartTotal().ToString("c")</strong>
+                </td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+    <a class="item" asp-controller="Order" asp-action="Checkout">
+        <div class="btn btn-success ml-5">
+            <i class="bi bi-bag-check"></i> Checkout
+        </div>
+    </a>
+
+    <a class="item" asp-controller="Cart" asp-action="ClearCart">
+        <div class="btn btn-warning ml-5">
+            <i class="bi bi-trash"></i> Empty Cart
+        </div>
+    </a>
+}
+else
+{
+    <h3 class="text-center">Cart is empty</h3>
+}

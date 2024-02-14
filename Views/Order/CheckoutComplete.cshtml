@@ -1,0 +1,58 @@
+﻿@model Projet.Models.Order
+
+<h1>Order Processed Successfully</h1>
+
+<h5 class="mt-5">Order ID: @Model.Id</h5>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Book</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.OrderItems)
+        {
+            var total = item.Book.Price * item.Quantity;
+
+            <tr>
+                <td>
+                    <a class="item" asp-controller="Store" asp-action="Details" asp-route-id="@item.Id">
+                        <img src="~/images/@Url.Content(item.Book.ImageUrl)" style="height: 4em" />
+                    </a>
+                </td>
+
+                <td>
+                    <a class="item" asp-controller="Store" asp-action="Details" asp-route-id="@item.Id">
+                        @item.Book.Title
+                    </a>
+                </td>
+
+                <td>
+                    @total.ToString("c")
+                </td>
+
+                <td>
+                    @item.Quantity
+                </td>
+            </tr>
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="2"></td>
+            <td class="text-right">
+                <strong>Total:</strong>
+            </td>
+
+            <td>
+                <strong>@Model?.OrderTotal.ToString("c")</strong>
+            </td>
+        </tr>
+    </tfoot>
+</table>
